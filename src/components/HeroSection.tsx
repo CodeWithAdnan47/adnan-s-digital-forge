@@ -1,5 +1,5 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import profilePhoto from '@/assets/profile-photo.jpg';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -18,8 +18,8 @@ const HeroSection = () => {
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glass-card p-2 gradient-border">
               <img
                 src={profilePhoto}
-                alt="Adnan Irshad Bagwan"
-                className="w-full h-full object-cover rounded-full"
+                alt="Adnan Bagwan"
+                className="w-full h-full object-cover object-top rounded-full"
               />
             </div>
             {/* Decorative rings */}
@@ -32,10 +32,10 @@ const HeroSection = () => {
             <p className="text-secondary font-medium mb-4 opacity-0 animate-fade-in tracking-widest uppercase text-sm">
               Welcome to my portfolio
             </p>
-            
+
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 animate-fade-in animation-delay-200">
               Hi, I'm{' '}
-              <span className="gradient-text">Adnan Irshad Bagwan</span>
+              <span className="gradient-text">Adnan Bagwan</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-6 opacity-0 animate-fade-in animation-delay-400">
@@ -43,7 +43,7 @@ const HeroSection = () => {
             </h2>
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-8 opacity-0 animate-fade-in animation-delay-600">
-              Backend Developer with hands-on experience in designing and implementing scalable server-side applications. 
+              Backend Developer with hands-on experience in designing and implementing scalable server-side applications.
               Skilled in API development, third-party API integration, and database optimization to ensure reliable performance.
             </p>
 
