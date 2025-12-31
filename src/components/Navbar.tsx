@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,15 +43,44 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-xl glass hover:bg-primary/20 transition-all duration-300 hover:scale-110"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <Sun size={18} className="text-secondary" />
+            ) : (
+              <Moon size={18} className="text-primary" />
+            )}
+          </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-foreground p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Controls */}
+        <div className="flex md:hidden items-center gap-2">
+          {/* Theme Toggle Mobile */}
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-xl glass hover:bg-primary/20 transition-all duration-300"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <Sun size={18} className="text-secondary" />
+            ) : (
+              <Moon size={18} className="text-primary" />
+            )}
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="text-foreground p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
